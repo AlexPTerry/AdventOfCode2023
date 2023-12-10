@@ -59,7 +59,7 @@ def get_fill(start_pos, distance_dict, start_dir):
             
         for diff in [(0, -1), (0, 1), (-1, 0), (1, 0)]:
             new_pos = add_tup(current_pos, diff)
-            if new_pos in (checked_set | distance_dict.keys()):
+            if new_pos in checked_set or new_pos in distance_dict:
                 continue
             if not in_bounds(new_pos):
                 return -1
@@ -117,7 +117,6 @@ def main():
             check_queue.append(new_pos)
             
     for start_dir in [(-1, -1), (-1, 1), (1, -1), (1, 1)]:
-        print(start_dir)
         quantity = get_fill(start_pos, distance_dict, start_dir)
         if quantity > 0:
             print(quantity)
