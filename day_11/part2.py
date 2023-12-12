@@ -1,6 +1,6 @@
 import os
 
-def get_input(name="input"):
+def get_input(name="input.txt"):
     current_directory = os.path.dirname(os.path.realpath(__file__))
     input_file_path = os.path.join(current_directory, name)
     with open(input_file_path, 'r') as file:
