@@ -18,7 +18,6 @@ def get_num_filled_blanks(block):
 
 @cache
 def get_num_perm_block(block, nums):
-    # print(f"Block: {block}, Nums: {nums}")
     num_filled, num_blanks = get_num_filled_blanks(block)
     total_filled = sum(nums) 
     total_blank = max(len(nums) - 1, 0)
